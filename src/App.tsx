@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import LandingPage from './pages/user/landing';
-//import UserDashboard from './pages/user/user-dashboard'; // New import
+import UserDashboard from './pages/user/user-dashboard'; // New import
 //import WorkerDetail from './pages/user/work-details'; // New import
 	
 function App() {
@@ -10,8 +10,8 @@ function App() {
       <div className="app-container">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          {/* <Route path="/user-dashboard" element={<UserDashboard />} />
-          <Route path="/worker/:id" element={<WorkerDetail />} /> */}
+          <Route path="/user-dashboard" element={<UserDashboard />} />
+          {/* <Route path="/worker/:id" element={<WorkerDetail />} /> */}
         </Routes>
       </div>
     </Router>
