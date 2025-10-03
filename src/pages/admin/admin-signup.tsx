@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './admin-login.css';
+import './admin-signup.css';
 import { Input, Button } from 'antd';
 import BackButton from '../../common-components/back-button';
 
-const AdminLogin: React.FC = () => {
+const AdminSignup: React.FC = () => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
@@ -53,4 +53,4 @@ const AdminLogin: React.FC = () => {
   );
 };
 
-export default AdminLogin;
+export default AdminSignup;
