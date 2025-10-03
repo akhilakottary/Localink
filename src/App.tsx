@@ -4,6 +4,7 @@ import LandingPage from './pages/user/landing';
 import UserDashboard from './pages/user/user-dashboard'; // New import
 import WorkerDetail from './pages/user/worker-details'; // New import
 import AdminSignup from './pages/admin/admin-signup'; // New import
+import AdminLogin from './pages/admin/admin-login'; // New import
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           <Route path="/user-dashboard" element={<UserDashboard />} />
           <Route path="/worker/:id" element={<WorkerDetail />} />
           <Route path="/admin-signup" element={<AdminSignup />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+
         </Routes>
       </div>
     </Router>
