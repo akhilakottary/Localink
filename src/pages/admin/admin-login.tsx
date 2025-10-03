@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './admin-signup.css';
+import './admin-login.css';
 import { Input, Button } from 'antd';
 import BackButton from '../../common-components/back-button';
 
-const AdminSignup: React.FC = () => {
+const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleContinue = () => {
+  const handleLogin = () => {
     // Add login logic here (e.g., API call or validation)
     console.log('Login attempted with:', { phone, password });
-    navigate('/worker-details'); // Navigate to worker details page after login (adjust as needed)
+    navigate('/user-dashboard'); // Navigate to dashboard after login (adjust as needed)
   };
 
   return (
     <div className="admin-login-container">
       <header className="login-header">
-        <BackButton navigateTo="/user-dashboard" color="#fff" />
+        <BackButton navigateTo="/admin-signup" color="#fff" />
       </header>
       <div className="login-card">
-        <h1 className="login-title">Sign up</h1>
+        <h1 className="login-title">Login</h1>
         <Input
           placeholder="Phone Number"
           value={phone}
@@ -37,20 +37,14 @@ const AdminSignup: React.FC = () => {
         />
         <Button
           type="primary"
-          onClick={handleContinue}
+          onClick={handleLogin}
           className="continue-button"
         >
-          Sign up
+          Login
         </Button>
-        <div className="login-link">
-          Already have an account?{' '}
-          <span onClick={() => navigate('/admin-login')} className="login-text">
-            Login
-          </span>
-        </div>
       </div>
     </div>
   );
 };
 
-export default AdminSignup;
+export default AdminLogin;

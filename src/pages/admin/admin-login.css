@@ -1,0 +1,150 @@
+/* Admin Login Container */
+.admin-login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    rgba(64, 123, 255, 0.9) 0%,
+    rgba(29, 78, 216, 0.8) 25%,
+    rgba(16, 185, 129, 0.8) 75%,
+    rgba(6, 182, 212, 0.9) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Login Header */
+.login-header {
+  width: 100%;
+  padding: 15px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Login Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  z-index: 10;
+  margin-top: 60px;
+}
+
+/* Login Title */
+.login-title {
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Login Input */
+.login-input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 2px solid rgba(64, 123, 255, 0.3);
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-input:focus {
+  border-color: rgba(64, 123, 255, 0.6);
+  box-shadow: 0 0 5px rgba(64, 123, 255, 0.3);
+}
+
+/* Continue Button */
+.continue-button {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(64, 123, 255, 0.9);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.continue-button:hover {
+  background-color: rgba(64, 123, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(64, 123, 255, 0.3);
+}
+
+/* Media Queries */
+
+/* Mobile - Small (up to 425px) */
+@media (max-width: 425px) {
+  .admin-login-container {
+    padding: 10px;
+  }
+
+  .login-header {
+    padding: 10px 15px;
+  }
+
+  .login-card {
+    padding: 20px;
+    max-width: 300px;
+    margin-top: 50px;
+    width: auto;
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .login-input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .continue-button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet - Small to Medium (426px - 768px) */
+@media (min-width: 426px) and (max-width: 768px) {
+  .login-header {
+    padding: 12px 18px;
+  }
+
+  .login-card {
+    padding: 25px;
+    margin-top: 60px;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablet - Large (769px - 1024px) and above */
+@media (min-width: 769px) {
+  .login-header {
+    padding: 15px 20px;
+  }
+
+  .login-card {
+    padding: 30px;
+    margin-top: 70px;
+  }
+}
