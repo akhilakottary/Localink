@@ -12,7 +12,7 @@ const AdminLogin: React.FC = () => {
   const handleLogin = () => {
     // Add login logic here (e.g., API call or validation)
     console.log('Login attempted with:', { phone, password });
-    navigate('/user-dashboard'); // Navigate to dashboard after login (adjust as needed)
+    navigate('/admin-dashboard'); // Navigate to dashboard after login (adjust as needed)
   };
 
   return (

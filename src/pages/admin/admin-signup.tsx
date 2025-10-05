@@ -12,7 +12,7 @@ const AdminSignup: React.FC = () => {
   const handleContinue = () => {
     // Add login logic here (e.g., API call or validation)
     console.log('Login attempted with:', { phone, password });
-    navigate('/worker-details'); // Navigate to worker details page after login (adjust as needed)
+    navigate('/admin-dashboard'); // Navigate to worker details page after login (adjust as needed)
   };
 
   return (
@@ -40,7 +40,7 @@ const AdminSignup: React.FC = () => {
           onClick={handleContinue}
           className="continue-button"
         >
-          Sign up
+          Continue
         </Button>
         <div className="login-link">
           Already have an account?{' '}
