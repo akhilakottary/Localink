@@ -6,6 +6,7 @@ import WorkerDetail from './pages/user/worker-details'; // New import
 import AdminSignup from './pages/admin/admin-signup'; // New import
 import AdminLogin from './pages/admin/admin-login'; // New import
 import AdminDashboard from './pages/admin/admin-dashboard'; // New import
+import CreateService from './pages/admin/create-service'; // New import
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/admin-signup" element={<AdminSignup />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/create-service" element={<CreateService />} />
+
         </Routes>
       </div>
     </Router>
