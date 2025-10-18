@@ -47,7 +47,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -232,24 +232,26 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Add Button */
 .add-button {
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: var(--primary-navy) !important;
   border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  color: white !important;
+  color: var(--white) !important;
   height: 40px;
   padding: 0 20px !important;
   border-radius: 25px !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
   backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
 }
 
 .add-button:hover,
 .add-button:focus {
-  background-color: rgba(255, 255, 255, 0.3) !important;
+  filter: brightness(1.3) !important;
   border-color: rgba(255, 255, 255, 0.5) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Search Bar - Larger Size */
@@ -265,7 +267,7 @@
   background: rgba(255, 255, 255, 0.9) !important;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
-  z-index: 10;
+  z-index: 100 !important;
   position: relative;
 }
 
@@ -273,6 +275,7 @@
 .search-bar:focus {
   border-color: rgba(255, 255, 255, 0.5) !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+  z-index: 100 !important;
 }
 
 .search-bar .ant-input-prefix {
@@ -344,10 +347,10 @@
 
 /* Media Queries - Following your structure */
 
-/* Mobile - Small (up to 425px) */
-@media (max-width: 425px) {
+/* Mobile - Small (up to 424px) */
+@media (max-width: 424px) {
   .dashboard-container {
-    padding: 6px 6px 10px 6px;
+    padding: 9px 6px 10px 6px;
   }
 
   .dashboard-header {
@@ -390,6 +393,12 @@
     padding: 8px 10px !important;
     font-size: 0.85rem !important;
     margin-bottom: 12px;
+    z-index: 100 !important;
+  }
+
+  .search-bar:hover,
+  .search-bar:focus {
+    z-index: 100 !important;
   }
 
   .search-bar .ant-input-prefix {
@@ -445,8 +454,8 @@
   }
 }
 
-/* Tablet - Small to Medium (426px - 768px) */
-@media (min-width: 426px) and (max-width: 768px) {
+/* Tablet - Small to Medium (425px - 768px) */
+@media (min-width: 425px) and (max-width: 768px) {
   .dashboard-header {
     padding: 12px 15px;
     min-height: 70px;
@@ -460,6 +469,12 @@
     max-width: 100%;
     padding: 13px 18px !important;
     font-size: 1.05rem !important;
+    z-index: 100 !important;
+  }
+
+  .search-bar:hover,
+  .search-bar:focus {
+    z-index: 100 !important;
   }
 
   .worker-list {
@@ -472,9 +487,9 @@
   }
 
   .worker-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
   }
 }
 
@@ -490,8 +505,14 @@
   }
 
   .search-bar {
-    max-width: 700px;
+    max-width: 1000px;
     padding: 14px 20px !important;
+    z-index: 100 !important;
+  }
+
+  .search-bar:hover,
+  .search-bar:focus {
+    z-index: 100 !important;
   }
 
   .worker-icon {
@@ -505,7 +526,7 @@
 @media (min-width: 1025px) and (max-width: 1440px) {
   .dashboard-header {
     padding: 16px 20px;
-    max-width: 1000px;
+    max-width: 1200px;
   }
 
   .dashboard-header h1 {
@@ -513,8 +534,14 @@
   }
 
   .search-bar {
-    max-width: 750px;
+    max-width: 1200px;
     padding: 15px 22px !important;
+    z-index: 100 !important;
+  }
+
+  .search-bar:hover,
+  .search-bar:focus {
+    z-index: 100 !important;
   }
 
   .worker-icon {
@@ -528,7 +555,7 @@
 @media (min-width: 1441px) and (max-width: 1750px) {
   .dashboard-header {
     padding: 18px 22px;
-    max-width: 1100px;
+    max-width: 1300px;
   }
 
   .dashboard-header h1 {
@@ -536,9 +563,15 @@
   }
 
   .search-bar {
-    max-width: 800px;
+    max-width: 1300px;
     padding: 16px 24px !important;
     font-size: 1.15rem !important;
+    z-index: 100 !important;
+  }
+
+  .search-bar:hover,
+  .search-bar:focus {
+    z-index: 100 !important;
   }
 
   .worker-icon {
@@ -552,7 +585,7 @@
 @media (min-width: 1751px) {
   .dashboard-header {
     padding: 20px 25px;
-    max-width: 1200px;
+    max-width: 1500px;
   }
 
   .dashboard-header h1 {
@@ -560,9 +593,15 @@
   }
 
   .search-bar {
-    max-width: 850px;
+    max-width: 1500px;
     padding: 18px 26px !important;
     font-size: 1.2rem !important;
+    z-index: 100 !important;
+  }
+
+  .search-bar:hover,
+  .search-bar:focus {
+    z-index: 100 !important;
   }
 
   .worker-icon {
