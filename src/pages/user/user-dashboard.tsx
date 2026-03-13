@@ -54,7 +54,7 @@ const UserDashboard: React.FC = () => {
         <h1>Dashboard</h1>
         <Button
           type="primary"
-          onClick={() => navigate('/admin-signup')}
+          onClick={() => navigate('/admin-landing')}
           className="add-button"
         >
           Add

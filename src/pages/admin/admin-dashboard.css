@@ -1,5 +1,5 @@
-/* Dashboard Container with Animated Background */
-.dashboard-container {
+/* Admin Dashboard Container with Animated Background */
+.admin-dashboard-container {
   min-height: 100vh;
   background: linear-gradient(135deg, 
     rgba(64, 123, 255, 0.9) 0%,
@@ -47,7 +47,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -198,100 +198,121 @@
   50% { opacity: 0.3; transform: scale(1); }
 }
 
-/* Dashboard Header */
-.dashboard-header {
+/* Logout Button */
+.logout-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Admin Header */
+.admin-header {
   width: 100%;
   max-width: 1200px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 15px 20px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
   margin-bottom: 25px;
-  position: relative;
   z-index: 10;
-  min-height: 60px;
-  flex-shrink: 0;
+  position: relative;
 }
 
-.dashboard-header > * {
-  margin: 0 5px;
-}
-
-.dashboard-header h1 {
+.admin-header h1 {
   font-size: 2rem;
   color: #fff;
   margin: 0;
-  flex-grow: 1;
-  text-align: center;
-  white-space: nowrap;
+  font-weight: 700;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Add Button */
-.add-button {
-  background-color: var(--primary-navy) !important;
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  color: var(--white) !important;
-  height: 40px;
-  padding: 0 20px !important;
-  border-radius: 25px !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease !important;
-  backdrop-filter: blur(10px) !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-}
-
-.add-button:hover,
-.add-button:focus {
-  filter: brightness(1.3) !important;
-  border-color: rgba(255, 255, 255, 0.5) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Search Bar - Larger Size */
-.search-bar {
+/* Search Section */
+.search-section {
   width: 100%;
-  max-width: 800px;
-  padding: 15px 20px !important;
-  margin-bottom: 25px;
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  border-radius: 50px !important;
-  font-size: 1.1rem !important;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
-  z-index: 100 !important;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  z-index: 10;
   position: relative;
 }
 
-.search-bar:hover,
-.search-bar:focus {
-  border-color: rgba(255, 255, 255, 0.5) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
-  z-index: 100 !important;
+/* Admin Search Bar */
+.admin-search-bar {
+  width: 100%;
+  max-width: 1000px;
+  padding: 15px 20px !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50px !important;
+  font-size: 1.1rem !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
-.search-bar .ant-input-prefix {
+.admin-search-bar:hover,
+.admin-search-bar:focus {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.admin-search-bar .ant-input-prefix {
   margin: 0 12px 0 0;
-  color: var(--secondary-gray);
   font-size: 1.2rem;
 }
 
-.search-bar .ant-input {
+.admin-search-bar .ant-input {
   padding-left: 0;
   font-size: 1.1rem !important;
   background: transparent !important;
 }
 
-/* Worker List */
-.worker-list {
+/* Create Section */
+.create-section {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+  padding: 0 20px;
+  z-index: 10;
+  position: relative;
+}
+
+/* Create Button */
+.create-button {
+  flex-shrink: 0;
+}
+
+.create-button:hover {
+  background-color: #10b981 !important;
+}
+
+/* Create Button */
+.create-button {
+  flex-shrink: 0;
+}
+
+/* Service List */
+.service-list {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -302,146 +323,209 @@
   position: relative;
 }
 
-.worker-card {
+.service-card {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 15px;
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
   box-sizing: border-box;
+  gap: 15px;
 }
 
-.worker-card:hover {
-  transform: translateY(-5px);
+.service-card:hover {
+  transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.profile-photo {
+.service-profile-photo {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  margin-right: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(64, 123, 255, 0.3);
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
-.worker-info {
+.service-info {
   flex: 1;
 }
 
-.worker-info h3 {
+.service-info h3 {
   margin: 0;
-  color: var(--primary-navy);
+  color: #1e3a8a;
   font-size: 1.2rem;
 }
 
-.worker-info p {
+.service-info p {
   margin: 5px 0 0;
-  color: var(--secondary-gray);
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.service-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.action-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-button {
+  background: rgba(64, 123, 255, 0.2);
+  color: #407bff;
+  border: 1px solid rgba(64, 123, 255, 0.3);
+}
+
+.edit-button:hover {
+  background: rgba(64, 123, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.delete-button {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.delete-button:hover {
+  background: rgba(239, 68, 68, 0.3);
+  transform: scale(1.1);
+}
+
+.no-services {
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  padding: 40px;
 }
 
 /* Media Queries - Following your structure */
 
-/* Mobile - Small (up to 424px) */
-@media (max-width: 424px) {
-  .dashboard-container {
-    padding: 9px 6px 10px 6px;
+/* Mobile - Small (up to 425px) */
+@media (max-width: 425px) {
+  .admin-dashboard-container {
+    padding: 10px 8px;
+    justify-content: flex-start;
   }
 
-  .dashboard-header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 4px;
-    min-height: 42px;
-    gap: 2px;
-    width: 98%;
-    margin-bottom: 12px;
-    margin-top: 2px;
-  }
-
-  .dashboard-header > * {
-    margin: 0 1px;
-  }
-
-  .dashboard-header h1 {
-    font-size: 0.85rem;
-    flex-shrink: 1;
-    overflow: visible;
-    white-space: nowrap;
-    letter-spacing: -0.5px;
-  }
-
-  .dashboard-header button {
-    flex-shrink: 0;
-  }
-
-  .add-button {
-    height: 26px;
-    padding: 0 7px !important;
-    font-size: 0.7rem !important;
-  }
-
-  .search-bar {
-    max-width: 94%;
-    width: 94%;
-    padding: 8px 10px !important;
-    font-size: 0.85rem !important;
-    margin-bottom: 12px;
-    z-index: 100 !important;
-  }
-
-  .search-bar:hover,
-  .search-bar:focus {
-    z-index: 100 !important;
-  }
-
-  .search-bar .ant-input-prefix {
-    font-size: 0.85rem;
-    margin: 0 8px 0 0;
-  }
-
-  .search-bar .ant-input {
-    font-size: 0.85rem !important;
-  }
-
-  .worker-list {
-    padding: 0 6px;
-    width: 94%;
-  }
-
-  .worker-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .profile-photo {
-    margin-right: 0;
-    margin-bottom: 8px;
-    width: 45px;
-    height: 45px;
-  }
-
-  .worker-info h3 {
+  .logout-button {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
     font-size: 1rem;
   }
 
-  .worker-info p {
-    font-size: 0.9rem;
+  .admin-header {
+    margin-top: 45px;
+    margin-bottom: 12px;
   }
 
-  /* Hide or reduce background elements on mobile */
-  .worker-icon {
+  .admin-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .search-section {
+    margin-bottom: 10px;
+    padding: 0 8px;
+  }
+
+  .admin-search-bar {
+    width: 100%;
+    max-width: 100%;
+    padding: 9px 12px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .admin-search-bar .ant-input-prefix {
+    font-size: 0.9rem;
+    margin: 0 8px 0 0;
+  }
+
+  .admin-search-bar .ant-input {
+    font-size: 0.85rem !important;
+  }
+
+  .create-section {
+    margin-bottom: 15px;
+    padding: 0 8px;
+  }
+
+  .create-button {
+    width: auto;
+    min-width: 90px;
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .service-list {
+    padding: 0 8px;
+    max-width: 100%;
+  }
+
+  .service-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .service-profile-photo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .service-info {
+    width: 100%;
+  }
+
+  .service-info h3 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+
+  .service-info p {
+    font-size: 0.85rem;
+    margin: 3px 0;
+  }
+
+  .service-actions {
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .action-button {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  /* Hide background elements on mobile */
+  .worker-icons {
     display: none;
   }
 
-  .floating-circle {
+  .floating-elements {
     display: none;
   }
 
@@ -454,65 +538,50 @@
   }
 }
 
-/* Tablet - Small to Medium (425px - 768px) */
-@media (min-width: 425px) and (max-width: 768px) {
-  .dashboard-header {
-    padding: 12px 15px;
-    min-height: 70px;
+/* Tablet - Small to Medium (426px - 768px) */
+@media (min-width: 426px) and (max-width: 768px) {
+  .logout-button {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
   }
 
-  .dashboard-header h1 {
-    font-size: 1.8rem;
+  .admin-header h1 {
+    font-size: 1.9rem;
   }
 
-  .search-bar {
-    max-width: 100%;
-    padding: 13px 18px !important;
-    font-size: 1.05rem !important;
-    z-index: 100 !important;
-  }
-
-  .search-bar:hover,
-  .search-bar:focus {
-    z-index: 100 !important;
-  }
-
-  .worker-list {
+  .search-section {
     padding: 0 15px;
   }
 
-  .add-button {
-    height: 38px;
-    padding: 0 18px !important;
+  .admin-search-bar {
+    padding: 13px 18px !important;
+    font-size: 1rem !important;
+  }
+
+  .create-section {
+    padding: 0 15px;
+  }
+
+  .service-list {
+    padding: 0 15px;
   }
 
   .worker-icon {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
   }
 }
 
 /* Tablet - Large (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .dashboard-header {
-    padding: 15px 18px;
-    max-width: 900px;
-  }
-
-  .dashboard-header h1 {
+  .admin-header h1 {
     font-size: 2rem;
   }
 
-  .search-bar {
-    max-width: 1000px;
+  .admin-search-bar {
     padding: 14px 20px !important;
-    z-index: 100 !important;
-  }
-
-  .search-bar:hover,
-  .search-bar:focus {
-    z-index: 100 !important;
   }
 
   .worker-icon {
@@ -524,24 +593,8 @@
 
 /* Laptop - Small (1025px - 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
-  .dashboard-header {
-    padding: 16px 20px;
-    max-width: 1200px;
-  }
-
-  .dashboard-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .search-bar {
-    max-width: 1200px;
-    padding: 15px 22px !important;
-    z-index: 100 !important;
-  }
-
-  .search-bar:hover,
-  .search-bar:focus {
-    z-index: 100 !important;
+  .admin-header h1 {
+    font-size: 2.1rem;
   }
 
   .worker-icon {
@@ -553,25 +606,13 @@
 
 /* Laptop - Large (1441px - 1750px) */
 @media (min-width: 1441px) and (max-width: 1750px) {
-  .dashboard-header {
-    padding: 18px 22px;
-    max-width: 1300px;
+  .admin-header h1 {
+    font-size: 2.3rem;
   }
 
-  .dashboard-header h1 {
-    font-size: 2.4rem;
-  }
-
-  .search-bar {
-    max-width: 1300px;
-    padding: 16px 24px !important;
+  .admin-search-bar {
+    padding: 16px 22px !important;
     font-size: 1.15rem !important;
-    z-index: 100 !important;
-  }
-
-  .search-bar:hover,
-  .search-bar:focus {
-    z-index: 100 !important;
   }
 
   .worker-icon {
@@ -583,25 +624,13 @@
 
 /* Desktop - Extra Large (1751px and above) */
 @media (min-width: 1751px) {
-  .dashboard-header {
-    padding: 20px 25px;
-    max-width: 1500px;
-  }
-
-  .dashboard-header h1 {
+  .admin-header h1 {
     font-size: 2.5rem;
   }
 
-  .search-bar {
-    max-width: 1500px;
-    padding: 18px 26px !important;
+  .admin-search-bar {
+    padding: 18px 24px !important;
     font-size: 1.2rem !important;
-    z-index: 100 !important;
-  }
-
-  .search-bar:hover,
-  .search-bar:focus {
-    z-index: 100 !important;
   }
 
   .worker-icon {

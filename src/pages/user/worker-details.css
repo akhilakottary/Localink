@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 70px 20px 20px 20px;
+  padding: 90px 20px 20px 20px;
   margin: 0;
   width: 100vw;
   box-sizing: border-box;
@@ -172,7 +172,7 @@
 
 .line:nth-child(1) {
   width: 200px;
-  top: 30%;
+  top: 15%;
   left: 20%;
   transform: rotate(25deg);
   animation-delay: 0s;
@@ -201,14 +201,20 @@
 
 /* Back Button and Header Section */
 .header-section {
-  position: absolute;
-  top: 15px;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px 20px;
+  background: rgba(64, 123, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 60px;
+  box-sizing: border-box;
 }
 
 .header-section > button {
@@ -222,6 +228,8 @@
   margin: 0;
   font-weight: 700;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  flex: 1;
+  text-align: center;
 }
 
 /* Worker Details Card */
@@ -327,78 +335,82 @@
   z-index: 10;
 }
 
-/* Media Queries - Following your structure */
+/* Media Queries - Following Dashboard Structure */
 
-/* Mobile - Small (up to 425px) */
-@media (max-width: 425px) {
+/* Mobile - Small (up to 424px) */
+@media (max-width: 424px) {
   .work-details-container {
-    padding: 60px 10px 10px 10px;
+    padding: 60px 6px 10px 6px;
     justify-content: flex-start;
   }
 
   .header-section {
-    top: 20px;
+    padding: 8px 4px;
+    min-height: 50px;
   }
 
   .header-section > button {
-    left: 10px;
+    left: 6px;
   }
 
   .page-title {
-    font-size: 0.7rem; /* Further reduced to ensure fit */
-    color: #fff;
-    margin: 0;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    white-space: nowrap; /* Prevents text wrapping */
-    padding: 0 20px; /* Increased padding for better spacing */
-    max-width: 70%; /* Further limits width to prevent overflow */
+    font-size: 0.85rem;
+    white-space: nowrap;
+    padding: 0 10px;
+    max-width: 70%;
+    letter-spacing: -0.5px;
   }
 
   .worker-details-card {
-    padding: 20px 8px;
-    width: 96%;
+    padding: 15px 10px;
+    width: 94%;
     max-height: none;
-  }
-
-  .worker-profile-photo {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 12px;
-  }
-
-  .worker-name {
-    font-size: 1.5rem;
+    border-radius: 15px;
   }
 
   .worker-profile-section {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+  }
+
+  .worker-profile-photo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    border-width: 3px;
+  }
+
+  .worker-name {
+    font-size: 1.3rem;
   }
 
   .worker-info-section {
-    gap: 12px;
+    gap: 10px;
   }
 
   .info-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .info-value {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .info-description {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .description-item {
+    margin-top: 5px;
   }
 
   /* Hide background elements on mobile */
-  .worker-icons {
+  .worker-icon {
     display: none;
   }
 
-  .floating-elements {
+  .floating-circle {
     display: none;
   }
 
@@ -411,10 +423,15 @@
   }
 }
 
-/* Tablet - Small to Medium (426px - 768px) */
-@media (min-width: 426px) and (max-width: 768px) {
+/* Tablet - Small to Medium (425px - 768px) */
+@media (min-width: 425px) and (max-width: 768px) {
+  .work-details-container {
+    padding: 80px 15px 15px 15px;
+  }
+
   .header-section {
-    top: 12px;
+    padding: 12px 15px;
+    min-height: 55px;
   }
 
   .header-section > button {
@@ -422,12 +439,67 @@
   }
 
   .page-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    letter-spacing: -0.3px;
   }
 
   .worker-details-card {
-    padding: 35px 30px;
-    width: 92%;
+    padding: 25px 20px;
+    width: 90%;
+    max-width: 550px;
+  }
+
+  .worker-profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .worker-name {
+    font-size: 1.7rem;
+  }
+
+  .info-label {
+    font-size: 0.85rem;
+  }
+
+  .info-value {
+    font-size: 1.1rem;
+  }
+
+  .info-description {
+    font-size: 1rem;
+  }
+
+  .worker-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* Tablet - Large (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .work-details-container {
+    padding: 85px 18px 20px 18px;
+  }
+
+  .header-section {
+    padding: 12px 18px;
+    min-height: 58px;
+  }
+
+  .header-section > button {
+    left: 18px;
+  }
+
+  .page-title {
+    font-size: 1.3rem;
+    letter-spacing: -0.3px;
+  }
+
+  .worker-details-card {
+    max-width: 620px;
+    padding: 28px 25px;
   }
 
   .worker-profile-photo {
@@ -436,49 +508,25 @@
   }
 
   .worker-name {
-    font-size: 1.8rem;
-  }
-
-  .info-value {
-    font-size: 1.15rem;
+    font-size: 1.9rem;
   }
 
   .worker-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
-}
-
-/* Tablet - Large (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .header-section {
-    top: 15px;
-  }
-
-  .header-section > button {
-    left: 18px;
-  }
-
-  .page-title {
-    font-size: 1.6rem;
-  }
-
-  .worker-details-card {
-    max-width: 650px;
-  }
-
-  .worker-icon {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     font-size: 20px;
   }
 }
 
 /* Laptop - Small (1025px - 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
+  .work-details-container {
+    padding: 90px 20px 20px 20px;
+  }
+
   .header-section {
-    top: 16px;
+    padding: 15px 20px;
+    min-height: 60px;
   }
 
   .header-section > button {
@@ -486,24 +534,43 @@
   }
 
   .page-title {
-    font-size: 1.7rem;
+    font-size: 1.75rem;
   }
 
   .worker-details-card {
-    max-width: 700px;
+    max-width: 650px;
+    padding: 32px 28px;
+  }
+
+  .worker-profile-photo {
+    width: 115px;
+    height: 115px;
+  }
+
+  .worker-name {
+    font-size: 2rem;
+  }
+
+  .info-value {
+    font-size: 1.15rem;
   }
 
   .worker-icon {
-    width: 55px;
-    height: 55px;
-    font-size: 22px;
+    width: 52px;
+    height: 52px;
+    font-size: 21px;
   }
 }
 
 /* Laptop - Large (1441px - 1750px) */
 @media (min-width: 1441px) and (max-width: 1750px) {
+  .work-details-container {
+    padding: 95px 22px 22px 22px;
+  }
+
   .header-section {
-    top: 18px;
+    padding: 16px 22px;
+    min-height: 62px;
   }
 
   .header-section > button {
@@ -511,34 +578,51 @@
   }
 
   .page-title {
-    font-size: 1.9rem;
+    font-size: 1.85rem;
   }
 
   .worker-details-card {
-    max-width: 750px;
-    padding: 45px;
+    max-width: 700px;
+    padding: 38px 32px;
   }
 
   .worker-profile-photo {
-    width: 130px;
-    height: 130px;
+    width: 125px;
+    height: 125px;
   }
 
   .worker-name {
-    font-size: 2.2rem;
+    font-size: 2.15rem;
+  }
+
+  .info-label {
+    font-size: 0.95rem;
+  }
+
+  .info-value {
+    font-size: 1.25rem;
+  }
+
+  .info-description {
+    font-size: 1.15rem;
   }
 
   .worker-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
+    width: 58px;
+    height: 58px;
+    font-size: 23px;
   }
 }
 
 /* Desktop - Extra Large (1751px and above) */
 @media (min-width: 1751px) {
+  .work-details-container {
+    padding: 100px 25px 25px 25px;
+  }
+
   .header-section {
-    top: 20px;
+    padding: 18px 25px;
+    min-height: 65px;
   }
 
   .header-section > button {
@@ -550,22 +634,34 @@
   }
 
   .worker-details-card {
-    max-width: 800px;
-    padding: 50px;
+    max-width: 750px;
+    padding: 42px 36px;
   }
 
   .worker-profile-photo {
-    width: 140px;
-    height: 140px;
+    width: 135px;
+    height: 135px;
   }
 
   .worker-name {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
+  }
+
+  .info-label {
+    font-size: 1rem;
+  }
+
+  .info-value {
+    font-size: 1.3rem;
+  }
+
+  .info-description {
+    font-size: 1.2rem;
   }
 
   .worker-icon {
-    width: 65px;
-    height: 65px;
-    font-size: 26px;
+    width: 62px;
+    height: 62px;
+    font-size: 25px;
   }
 }

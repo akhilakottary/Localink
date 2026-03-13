@@ -12,6 +12,7 @@ const AdminLogin: React.FC = () => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
+<<<<<<< admin-login-page
     // Add login logic here
     console.log('Login:', { email, password });
     navigate('/admin-dashboard');
@@ -19,6 +20,11 @@ const AdminLogin: React.FC = () => {
 
   const handleRegister = () => {
     navigate('/admin-signup');
+=======
+    // Add login logic here (e.g., API call or validation)
+    console.log('Login attempted with:', { phone, password });
+    navigate('/admin-dashboard'); // Navigate to dashboard after login (adjust as needed)
+>>>>>>> develop
   };
 
   return (
