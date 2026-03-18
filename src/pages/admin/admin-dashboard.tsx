@@ -37,6 +37,10 @@ const AdminDashboard: React.FC = () => {
     console.log('Delete service:', id);
   };
 
+  const handleCreate = () => {
+    navigate('/create-service'); // Navigate to create-service page
+  };
+
   return (
     <div className="admin-dashboard-container">
       <AnimatedBackground />
@@ -61,7 +65,7 @@ const AdminDashboard: React.FC = () => {
       </div>
 
       <div className="create-section">
-        <Button onClick={() => console.log('Create new service')} className="create-button">
+        <Button onClick={handleCreate} className="create-button">
           Create
         </Button>
       </div>

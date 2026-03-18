@@ -6,6 +6,9 @@ import UserDashboard from './pages/user/user-dashboard';
 import WorkerDetail from './pages/user/worker-details';
 import AdminSignup from './pages/admin/admin-signup';
 import AdminLogin from './pages/admin/admin-login';
+import AdminDashboard from './pages/admin/admin-dashboard';
+import CreateService from './pages/admin/create-service';
+import AdminLanding from './pages/admin/admin-landing';
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
             <Route path="/worker/:id" element={<WorkerDetail />} />
             <Route path="/admin-signup" element={<AdminSignup />} />
             <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/create-service" element={<CreateService />} />
+            <Route path="/admin-landing" element={<AdminLanding />} />
           </Routes>
         </div>
       </Router>
@@ -41,4 +47,5 @@ function App() {
 }
 
 export default App;
+
 

@@ -128,11 +128,6 @@
   background-color: #10b981 !important;
 }
 
-/* Create Button */
-.create-button {
-  flex-shrink: 0;
-}
-
 /* Service List */
 .service-list {
   width: 100%;
@@ -238,8 +233,6 @@
   padding: 40px;
 }
 
-/* Media Queries - Following your structure */
-
 /* Standardized Media Queries */
 
 /* 1. Mobile (max-width: 424px) */
@@ -275,6 +268,15 @@
     width: 100%;
     max-width: 100%;
     padding: 9px 12px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .admin-search-bar .ant-input-prefix {
+    font-size: 0.9rem;
+    margin: 0 8px 0 0;
+  }
+
+  .admin-search-bar .ant-input {
     font-size: 0.85rem !important;
   }
 
@@ -316,6 +318,11 @@
   .service-info h3 {
     font-size: 1rem;
     margin-bottom: 3px;
+  }
+
+  .service-info p {
+    font-size: 0.85rem;
+    margin: 3px 0;
   }
 
   .service-actions {
