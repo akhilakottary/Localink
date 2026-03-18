@@ -4,6 +4,7 @@ import './admin-dashboard.css';
 import { Input } from 'antd';
 import { SearchOutlined, LogoutOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Button from '../../common-components/button';
+import AnimatedBackground from '../../common-components/animated-background';
 
 // Dummy services data
 export const dummyServices = [
@@ -42,32 +43,7 @@ const AdminDashboard: React.FC = () => {
 
   return (
     <div className="admin-dashboard-container">
-      {/* Background Animation Elements */}
-      <div className="background-pattern"></div>
-      
-      {/* Floating Worker Icons */}
-      <div className="worker-icons">
-        <div className="worker-icon">🔨</div>
-        <div className="worker-icon">🔧</div>
-        <div className="worker-icon">🏗️</div>
-        <div className="worker-icon">⚡</div>
-        <div className="worker-icon">🎨</div>
-        <div className="worker-icon">🧰</div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="floating-elements">
-        <div className="floating-circle"></div>
-        <div className="floating-circle"></div>
-        <div className="floating-circle"></div>
-      </div>
-
-      {/* Connection Lines */}
-      <div className="connection-lines">
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
+      <AnimatedBackground />
 
       {/* Logout Button */}
       <button className="logout-button" onClick={handleLogout}>

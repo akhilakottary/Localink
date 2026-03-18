@@ -105,10 +105,12 @@
 
 /* Media Queries */
 
-/* Mobile - Small (up to 425px) */
-@media (max-width: 425px) {
+/* Standardized Media Queries */
+
+/* 1. Mobile (max-width: 424px) */
+@media (max-width: 424px) {
   .admin-login-container {
-    padding: 10px; /* Reduced padding to fit content better */
+    padding: 10px;
   }
 
   .login-header {
@@ -117,9 +119,9 @@
 
   .login-card {
     padding: 20px;
-    max-width: 300px; /* Reduced max-width for 425px to prevent full expansion */
-    margin-top: 50px; /* Adjusted for smaller screens */
-    width: auto; /* Allows card to size based on content */
+    max-width: 300px;
+    margin-top: 50px;
+    width: auto;
   }
 
   .login-title {
@@ -142,8 +144,8 @@
   }
 }
 
-/* Tablet - Small to Medium (426px - 768px) */
-@media (min-width: 426px) and (max-width: 768px) {
+/* 2. Tablet Portrait (425px - 768px) */
+@media (min-width: 425px) and (max-width: 768px) {
   .login-header {
     padding: 12px 18px;
   }
@@ -158,7 +160,7 @@
   }
 }
 
-/* Tablet - Large (769px - 1024px) and above */
+/* 3. Tablet Landscape / Small Laptop (769px - 1024px) */
 @media (min-width: 769px) {
   .login-header {
     padding: 15px 20px;

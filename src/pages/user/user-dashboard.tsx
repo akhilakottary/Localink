@@ -4,6 +4,7 @@ import './user-dasboard.css';
 import { Button, Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import BackButton from '../../common-components/back-button';
+import AnimatedBackground from '../../common-components/animated-background';
 
 export const dummyWorkers = [
   { id: 1, name: 'John Doe', service: 'Plumber', price: '₹200/hr', profilePhoto: '/images/john-doe.jpg', contact: '123-456-7890', distance: '2km', description: 'Experienced plumber for all home repairs.' },
@@ -22,32 +23,7 @@ const UserDashboard: React.FC = () => {
 
   return (
     <div className="dashboard-container">
-      {/* Background Animation Elements */}
-      <div className="background-pattern"></div>
-      
-      {/* Floating Worker Icons */}
-      <div className="worker-icons">
-        <div className="worker-icon">🔨</div>
-        <div className="worker-icon">🔧</div>
-        <div className="worker-icon">🏗️</div>
-        <div className="worker-icon">⚡</div>
-        <div className="worker-icon">🎨</div>
-        <div className="worker-icon">🧰</div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="floating-elements">
-        <div className="floating-circle"></div>
-        <div className="floating-circle"></div>
-        <div className="floating-circle"></div>
-      </div>
-
-      {/* Connection Lines */}
-      <div className="connection-lines">
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
+      <AnimatedBackground />
 
       <header className="dashboard-header">
         <BackButton navigateTo="/" color="#fff" />

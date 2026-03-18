@@ -3,38 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import './admin-landing.css';
 import Button from '../../common-components/button';
 import BackButton from '../../common-components/back-button';
+import AnimatedBackground from '../../common-components/animated-background';
 
 const AdminLanding: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <div className="admin-landing-container">
-      {/* Background Animation Elements */}
-      <div className="background-pattern"></div>
-      
-      {/* Floating Worker Icons */}
-      <div className="worker-icons">
-        <div className="worker-icon">🔨</div>
-        <div className="worker-icon">🔧</div>
-        <div className="worker-icon">🏗️</div>
-        <div className="worker-icon">⚡</div>
-        <div className="worker-icon">🎨</div>
-        <div className="worker-icon">🧰</div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="floating-elements">
-        <div className="floating-circle"></div>
-        <div className="floating-circle"></div>
-        <div className="floating-circle"></div>
-      </div>
-
-      {/* Connection Lines */}
-      <div className="connection-lines">
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
+      <AnimatedBackground />
 
       {/* Back Button */}
       <div className="back-button-wrapper">
