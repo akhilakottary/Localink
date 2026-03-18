@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './admin-signup.css';
 import { Input, Button } from 'antd';
 import BackButton from '../../common-components/back-button';
+import AnimatedBackground from '../../common-components/animated-background';
 
 const AdminSignup: React.FC = () => {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ const AdminSignup: React.FC = () => {
 
   return (
     <div className="admin-login-container">
+      <AnimatedBackground />
       <header className="login-header">
         <BackButton navigateTo="/user-dashboard" color="#fff" />
       </header>
