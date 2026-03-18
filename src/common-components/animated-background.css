@@ -110,3 +110,31 @@
   0%, 100% { opacity: 0; transform: scale(0.5); }
   50% { opacity: 0.3; transform: scale(1); }
 }
+
+/* GLOBAL RESPONSIVE RULES FOR BACKGROUND */
+
+/* 1. Mobile (<= 424px) */
+@media (max-width: 424px) {
+  .background-pattern {
+    opacity: 0.05 !important;
+  }
+  
+  .worker-icons,
+  .floating-elements,
+  .connection-lines {
+    display: none !important;
+  }
+}
+
+/* 2. Tablet transitions (425px - 1024px) */
+@media (min-width: 425px) and (max-width: 1024px) {
+  .worker-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .floating-circle {
+    transform: scale(0.8);
+  }
+}

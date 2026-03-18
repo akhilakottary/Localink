@@ -18,185 +18,7 @@
   position: relative;
 }
 
-/* Background Animation Pattern */
-.background-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.1;
-  background-image: 
-    radial-gradient(circle at 20% 20%, white 2px, transparent 2px),
-    radial-gradient(circle at 80% 40%, white 1px, transparent 1px),
-    radial-gradient(circle at 40% 80%, white 1.5px, transparent 1.5px),
-    radial-gradient(circle at 90% 10%, white 1px, transparent 1px),
-    radial-gradient(circle at 10% 90%, white 2px, transparent 2px);
-  background-size: 100px 100px, 150px 150px, 120px 120px, 80px 80px, 200px 200px;
-  animation: float 20s ease-in-out infinite;
-  z-index: 1;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(2deg); }
-}
-
-/* Worker Icons */
-.worker-icons {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.worker-icon {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.1); opacity: 1; }
-}
-
-.worker-icon:nth-child(1) {
-  top: 15%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.worker-icon:nth-child(2) {
-  top: 25%;
-  right: 15%;
-  animation-delay: 0.5s;
-}
-
-.worker-icon:nth-child(3) {
-  bottom: 30%;
-  left: 8%;
-  animation-delay: 1s;
-}
-
-.worker-icon:nth-child(4) {
-  bottom: 20%;
-  right: 12%;
-  animation-delay: 1.5s;
-}
-
-.worker-icon:nth-child(5) {
-  top: 45%;
-  left: 5%;
-  animation-delay: 2s;
-}
-
-.worker-icon:nth-child(6) {
-  top: 35%;
-  right: 8%;
-  animation-delay: 2.5s;
-}
-
-/* Floating Elements */
-.floating-elements {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  animation: floatUpDown 6s ease-in-out infinite;
-}
-
-.floating-circle:nth-child(1) {
-  width: 80px;
-  height: 80px;
-  top: 20%;
-  left: 20%;
-  animation-delay: 0s;
-}
-
-.floating-circle:nth-child(2) {
-  width: 120px;
-  height: 120px;
-  top: 60%;
-  right: 25%;
-  animation-delay: 2s;
-}
-
-.floating-circle:nth-child(3) {
-  width: 60px;
-  height: 60px;
-  bottom: 25%;
-  left: 15%;
-  animation-delay: 4s;
-}
-
-@keyframes floatUpDown {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-30px); }
-}
-
-/* Connection Lines */
-.connection-lines {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.line {
-  position: absolute;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, white, transparent);
-  animation: drawLine 4s ease-in-out infinite;
-}
-
-.line:nth-child(1) {
-  width: 200px;
-  top: 30%;
-  left: 20%;
-  transform: rotate(25deg);
-  animation-delay: 0s;
-}
-
-.line:nth-child(2) {
-  width: 150px;
-  top: 50%;
-  right: 20%;
-  transform: rotate(-30deg);
-  animation-delay: 1s;
-}
-
-.line:nth-child(3) {
-  width: 180px;
-  bottom: 35%;
-  left: 25%;
-  transform: rotate(15deg);
-  animation-delay: 2s;
-}
-
-@keyframes drawLine {
-  0%, 100% { opacity: 0; transform: scale(0.5); }
-  50% { opacity: 0.3; transform: scale(1); }
-}
+/* Removed redundant background animation styles - now in AnimatedBackground.css */
 
 /* Back Button Wrapper */
 .back-button-wrapper {
@@ -258,9 +80,9 @@
   background-color: #10b981 !important;
 }
 
-/* Media Queries - Following your structure */
+/* Standardized Media Queries */
 
-/* Mobile - Small (up to 424px) */
+/* 1. Mobile (max-width: 424px) */
 @media (max-width: 424px) {
   .admin-landing-container {
     padding: 250px 15px 20px 15px;
@@ -283,26 +105,9 @@
   .login-button {
     min-width: 150px;
   }
-
-  /* Hide background elements on mobile */
-  .worker-icons {
-    display: none;
-  }
-
-  .floating-elements {
-    display: none;
-  }
-
-  .connection-lines {
-    display: none;
-  }
-
-  .background-pattern {
-    opacity: 0.05;
-  }
 }
 
-/* Tablet - Small to Medium (425px - 768px) */
+/* 2. Tablet Portrait (425px - 768px) */
 @media (min-width: 425px) and (max-width: 768px) {
   .back-button-wrapper {
     top: 15px;
@@ -316,15 +121,9 @@
   .admin-landing-header {
     font-size: 2.5rem;
   }
-
-  .worker-icon {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
-  }
 }
 
-/* Tablet - Large (769px - 1024px) */
+/* 3. Tablet Landscape / Small Laptop (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .back-button-wrapper {
     top: 18px;
@@ -338,49 +137,25 @@
   .admin-landing-header {
     font-size: 2.8rem;
   }
-
-  .worker-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
 }
 
-/* Laptop - Small (1025px - 1440px) */
+/* 4. Desktop / MacBook 13" (1025px - 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
   .admin-landing-header {
     font-size: 3.2rem;
   }
-
-  .worker-icon {
-    width: 55px;
-    height: 55px;
-    font-size: 22px;
-  }
 }
 
-/* Laptop - Large (1441px - 1750px) */
+/* 5. Large Desktop (1441px - 1750px) */
 @media (min-width: 1441px) and (max-width: 1750px) {
   .admin-landing-header {
     font-size: 3.5rem;
   }
-
-  .worker-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-  }
 }
 
-/* Desktop - Extra Large (1751px and above) */
+/* 6. Ultra Wide (min-width: 1751px) */
 @media (min-width: 1751px) {
   .admin-landing-header {
     font-size: 3.8rem;
-  }
-
-  .worker-icon {
-    width: 65px;
-    height: 65px;
-    font-size: 26px;
   }
 }

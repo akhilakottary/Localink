@@ -23,6 +23,16 @@
   --success-green: #10B981;
 }
 
+/* 
+  PROJECT BREAKPOINTS - Use ONLY these 6:
+  1. max-width: 424px (Mobile)
+  2. 425px - 768px (Tablet Portrait)
+  3. 769px - 1024px (Tablet Landscape / Small Laptop)
+  4. 1025px - 1440px (Desktop / MacBook 13")
+  5. 1441px - 1750px (Large Desktop)
+  6. min-width: 1751px (Ultra Wide)
+*/
+
 /* Import Ant Design styles */
 @import '~antd/dist/antd.css';
 
